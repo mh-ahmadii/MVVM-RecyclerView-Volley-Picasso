@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data class="UserRecyclerView">
+
+        <variable
+            name="recycler"
+            type="ir.applicore.mvvm_retrofi.viewmodel.UserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/avatarIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
+            bind:imageURL="@{recycler.avatar}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/firstNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="2dp"
+            android:text="@{recycler.firstName}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/avatarIv"
+            app:layout_constraintTop_toTopOf="@+id/avatarIv"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/lastNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="4dp"
+            android:padding="2dp"
+            android:text="@{recycler.lastName}"
+            android:textColor="#787878"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/avatarIv"
+            app:layout_constraintTop_toBottomOf="@+id/firstNameTv"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/emailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{recycler.email}"
+            android:textColor="#080D29"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="TextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+    <!--app:imageURL="@{recycler.imageURL}"-->
+    <!--app:picasso="@{recycler.picasso}"-->
